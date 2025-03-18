@@ -52,9 +52,10 @@ class Container:
         return attr     
     def selectObjects(self, event):
         sel_objects = list(filter(lambda p:p.checkPoint(event.x, event.y), self.objects))
-        sel_objects.sort(key=lambda p:p.distPoint(event.x, event.y)) #[0]
+        sel_objects.sort(key=lambda p:p.distPoint(event.x, event.y)) 
         for obj in sel_objects:
             obj.select()
+            # break
     def unselectObjects(self, *args):
         for obj in self.objects:
             obj.unselect()
